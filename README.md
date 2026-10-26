@@ -59,6 +59,11 @@ The web interface runs **on `127.0.0.1` only** — your WARP private keys never
 leave this machine. Pick your options, hit *Start scan*, wait, and download
 the zip of configs when it finishes.
 
+> **WARP account registration is blocked in your country?** Enable the proxy
+> option in the UI before starting — it is used *only* to create the account,
+> the scan itself runs direct on your own connection.
+> [Details](#accounts--privacy).
+
 ### Option C — command line
 
 ```bash
@@ -141,10 +146,15 @@ the handshake probe alone. Every generated config is still validatable with
 - First run registers a fresh WARP identity (WireGuard and/or MASQUE,
   depending on which config types you enabled) via Cloudflare's client API.
   Identities are cached in `warp_identity.json` next to the app (or
-  `%APPDATA%\Duck-Scanner\` for the packaged `.exe`) and reused on later runs —
-  you can register your account through a SOCKS5/HTTP proxy of your choice
-  (useful for getting a "clean" account from a specific region).
-- Scanning itself goes **direct**, not through the proxy.
+  `%APPDATA%\Duck-Scanner\` for the packaged `.exe`) and reused on later runs.
+
+> **Registration blocked in your country?** Point the app at a SOCKS5/HTTP
+> proxy that is used *only* for creating the WARP account — a VPN exit or
+> relay on another network works. The endpoint scan itself always runs
+> **direct, on your own connection**, so the endpoints you get are the ones
+> that are actually clean for *your* network — not the proxy's.
+
+- The proxy is used for account registration only; scanning goes direct.
 - The web UI binds to `127.0.0.1` and rejects other `Host` headers.
 - **The output zip contains your WARP private keys — treat it as private.**
 
