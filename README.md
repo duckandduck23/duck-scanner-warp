@@ -5,6 +5,8 @@
 </p>
 
 ---
+<img width="1354" height="874" alt="Capture" src="https://github.com/user-attachments/assets/c4482062-c875-4157-b7c2-ff8485909396" />
+
 
 **Duck Scanner** finds Cloudflare WARP endpoints that actually answer from your
 network — using a *real* WireGuard handshake (not a TCP ping) — and turns the
