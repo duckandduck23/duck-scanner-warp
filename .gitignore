@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Builds
+build/
+dist/
+*.spec.bak
+
+# Scanner output & local state
+warp_out/
+warp_identity.json
+warp_configs.zip
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
